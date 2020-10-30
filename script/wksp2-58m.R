@@ -1,3 +1,4 @@
+#TASK 1
 #set working directory 
 
 #load tidyverse package 
@@ -58,3 +59,16 @@ hdi_summary <- hdi3 %>%
   theme_classic() +
   coord_flip()
   
+
+#TASK 2
+#view data to decide how to read in
+file <- "http://www.ndbc.noaa.gov/view_text_file.php?filename=44025h2011.txt.gz&dir=data/historical/stdmet/"
+readLines(file, n = 4)
+
+#read in data
+buoy44025 <- read_table(file,
+                        col_names = FALSE,
+                        skip = 2)
+
+#scan data
+scan(file = "buoy44025",)
